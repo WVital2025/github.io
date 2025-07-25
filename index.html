@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <title>Wington de Lima Vital</title>
@@ -25,7 +25,7 @@
     }
 
     .photo {
-      margin-top: 80px; /* foto descida */
+      margin-top: 80px;
       margin-bottom: 20px;
       border-radius: 12px;
       box-shadow: 0 0 10px rgba(0,0,0,0.15);
@@ -51,21 +51,47 @@
       color: #0366d6;
       font-weight: 500;
       font-size: 16px;
+      cursor: pointer;
       transition: color 0.2s;
     }
 
-    .links a:hover {
+    .links a:hover,
+    .links a.active {
       color: #004999;
+      font-weight: 700;
     }
 
     .name-container {
-      margin-left: -30px; /* puxando o nome para mais perto da margem esquerda */
+      margin-left: -30px;
     }
 
     .name {
       font-size: 28px;
       font-weight: bold;
       margin: 0 0 10px 0;
+    }
+
+    /* Conteúdo das seções */
+    .content {
+      padding: 20px;
+      background: #fff;
+      border: 1px solid #ddd;
+      max-width: 700px;
+      min-height: 200px;
+      font-size: 16px;
+      color: #333;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      border-radius: 8px;
+    }
+
+    /* Esconder todas as seções inicialmente */
+    .content > div {
+      display: none;
+    }
+
+    /* Exibir seção ativa */
+    .content > div.active {
+      display: block;
     }
   </style>
 </head>
@@ -75,20 +101,78 @@
       <div class="photo">
         <img src="wvital.jpeg" alt="Minha foto" />
       </div>
-      <nav class="links">
-        <a href="#">Home</a>
-        <a href="#">Journal Publications</a>
-        <a href="#">Conference Papers</a>
-        <a href="#">Talks & Other Works</a>
-        <a href="#">Research Projects</a>
-        <a href="#">Teaching</a>
-        <a href="#">Source Codes</a>
-        <a href="#">Call-for-papers</a>
+      <nav class="links" id="menuLinks">
+        <a href="#" class="active" data-section="home">Home</a>
+        <a href="#" data-section="journal">Journal Publications</a>
+        <a href="#" data-section="conference">Conference Papers</a>
+        <a href="#" data-section="talks">Talks & Other Works</a>
+        <a href="#" data-section="research">Research Projects</a>
+        <a href="#" data-section="teaching">Teaching</a>
+        <a href="#" data-section="sourcecodes">Source Codes</a>
+        <a href="#" data-section="callforpapers">Call-for-papers</a>
       </nav>
     </div>
     <div class="name-container">
       <h1 class="name">Wington de Lima Vital</h1>
+
+      <div class="content">
+        <div id="home" class="active">
+          <h2>Home</h2>
+          <p>Bem-vindo à minha página pessoal!</p>
+        </div>
+        <div id="journal">
+          <h2>Journal Publications</h2>
+          <p>Aqui estarão minhas publicações em periódicos.</p>
+        </div>
+        <div id="conference">
+          <h2>Conference Papers</h2>
+          <p>Aqui estarão meus trabalhos apresentados em conferências.</p>
+        </div>
+        <div id="talks">
+          <h2>Talks & Other Works</h2>
+          <p>Minhas palestras e outros trabalhos.</p>
+        </div>
+        <div id="research">
+          <h2>Research Projects</h2>
+          <p>Projetos de pesquisa em andamento ou concluídos.</p>
+        </div>
+        <div id="teaching">
+          <h2>Teaching</h2>
+          <p>Matérias que ensino e materiais didáticos.</p>
+        </div>
+        <div id="sourcecodes">
+          <h2>Source Codes</h2>
+          <p>Códigos fonte de projetos e exemplos.</p>
+        </div>
+        <div id="callforpapers">
+          <h2>Call-for-papers</h2>
+          <p>Convites para submissão de trabalhos e eventos.</p>
+        </div>
+      </div>
     </div>
   </div>
+
+  <script>
+    const links = document.querySelectorAll('#menuLinks a');
+    const sections = document.querySelectorAll('.content > div');
+
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+
+        // Remove active dos links
+        links.forEach(l => l.classList.remove('active'));
+        // Ativa o link clicado
+        link.classList.add('active');
+
+        // Esconder todas as seções
+        sections.forEach(section => section.classList.remove('active'));
+        // Mostrar a seção relacionada ao link clicado
+        const sectionId = link.getAttribute('data-section');
+        document.getElementById(sectionId).classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>
+
