@@ -11,16 +11,14 @@
     }
 
     .header {
-      position: relative;
+      display: flex;
+      align-items: center;
       background-color: #f0f0f0;
       padding: 30px 20px;
-      text-align: center;
     }
 
     .photo {
-      position: absolute;
-      top: 20px;
-      right: 20px;
+      margin-right: 20px;
     }
 
     .photo img {
@@ -35,12 +33,6 @@
       font-weight: bold;
       margin: 0;
     }
-
-    .subtitle {
-      font-size: 18px;
-      color: #555;
-      margin-top: 8px;
-    }
   </style>
 </head>
 <body>
@@ -48,8 +40,9 @@
     <div class="photo">
       <img src="wvital.jpeg" alt="Minha foto">
     </div>
-    <h1 class="name">Wington de Lima Vital</h1>
-    <p class="subtitle">Pesquisador em redes neurais de valores hipercomplexos e vetoriais</p>
+    <div>
+      <h1 class="name">Wington de Lima Vital</h1>
+    </div>
   </div>
 </body>
 </html>
