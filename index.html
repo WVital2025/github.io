@@ -12,13 +12,15 @@
 
     .header {
       display: flex;
-      align-items: center;
+      /* align-items: flex-start;  alinhado no topo */
       background-color: #f0f0f0;
       padding: 30px 20px;
+      align-items: flex-start; /* nome e foto alinhados no topo */
     }
 
     .photo {
       margin-right: 20px;
+      margin-top: 15px; /* “baixa” a foto um pouco */
     }
 
     .photo img {
@@ -26,6 +28,7 @@
       height: auto;
       border-radius: 12px;
       box-shadow: 0 0 10px rgba(0,0,0,0.15);
+      display: block;
     }
 
     .name {
