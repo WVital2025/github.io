@@ -14,36 +14,79 @@
       display: flex;
       background-color: #f0f0f0;
       padding: 30px 20px;
-      align-items: flex-start; /* alinhado no topo */
+      align-items: flex-start;
+    }
+
+    .left-column {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-right: 20px;
     }
 
     .photo {
-      margin-right: 20px;
       margin-top: 80px; /* foto descida */
+      margin-bottom: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+      overflow: hidden;
+      width: 120px;
     }
 
     .photo img {
-      width: 120px;
+      width: 100%;
       height: auto;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.15);
       display: block;
+      border-radius: 12px;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .links a {
+      text-decoration: none;
+      color: #0366d6;
+      font-weight: 500;
+      font-size: 16px;
+      transition: color 0.2s;
+    }
+
+    .links a:hover {
+      color: #004999;
+    }
+
+    .name-container {
+      margin-left: -30px; /* puxando o nome para mais perto da margem esquerda */
     }
 
     .name {
       font-size: 28px;
       font-weight: bold;
-      margin: 0;
-      margin-left: -80px; /* puxando o nome para mais perto da margem esquerda */
+      margin: 0 0 10px 0;
     }
   </style>
 </head>
 <body>
   <div class="header">
-    <div class="photo">
-      <img src="wvital.jpeg" alt="Minha foto" />
+    <div class="left-column">
+      <div class="photo">
+        <img src="wvital.jpeg" alt="Minha foto" />
+      </div>
+      <nav class="links">
+        <a href="#">Home</a>
+        <a href="#">Journal Publications</a>
+        <a href="#">Conference Papers</a>
+        <a href="#">Talks & Other Works</a>
+        <a href="#">Research Projects</a>
+        <a href="#">Teaching</a>
+        <a href="#">Source Codes</a>
+        <a href="#">Call-for-papers</a>
+      </nav>
     </div>
-    <div>
+    <div class="name-container">
       <h1 class="name">Wington de Lima Vital</h1>
     </div>
   </div>
