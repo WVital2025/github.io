@@ -198,18 +198,12 @@
           </ol>
         </div>
 
-     <div id="conferencepapers">
-  <h2>Conference Papers</h2>
-  <ol>
-    <li>
-      CARNIELLO, Rafael A. F.; VITAL, Wington L.; VALLE, Marcos Eduardo.
-      <strong>Universal Approximation Theorem for Tessarine-Valued Neural Networks</strong>.
-      In: <em>Encontro Nacional de Inteligência Artificial e Computacional</em>, 2021, Brasil.
-      <em>Anais do XVIII Encontro Nacional de Inteligência Artificial e Computacional (ENIAC 2021)</em>, v. 18, p. 233–243.
-    </li>
-  </ol>
-</div>
-<div id="talks">
+        <div id="conference">
+          <h2>Conference Papers</h2>
+          <p>Aqui estarão meus trabalhos apresentados em conferências.</p>
+        </div>
+
+        <div id="talks">
           <h2>Talks & Other Works</h2>
           <p>Minhas palestras e outros trabalhos.</p>
         </div>
@@ -225,16 +219,16 @@
         </div>
 
         <div id="chapterbook">
-  <h2>Chapter Book</h2>
-  <ol>
-    <li>
-      VITAL, Wington L.; VIEIRA, Guilherme; VALLE, Marcos Eduardo.
-      <strong>Extending the Universal Approximation Theorem for a Broad Class of Hypercomplex-Valued Neural Networks</strong>.
-      In: Xavier-Junior, J.C.; Rios, R.A. (eds),
-      <em>Intelligent Systems. BRACIS 2022</em>. Lecture Notes in Computer Science 13654, Springer, Cham, 2022.
-    </li>
-  </ol>
-</div>
+          <h2>Chapter Book</h2>
+          <ol>
+            <li>
+              VITAL, Wington L.; VIEIRA, Guilherme; VALLE, Marcos Eduardo.
+              <strong>Extending the Universal Approximation Theorem for a Broad Class of Hypercomplex-Valued Neural Networks</strong>.
+              In: Xavier-Junior, J.C.; Rios, R.A. (eds),
+              <em>Intelligent Systems. BRACIS 2022</em>. Lecture Notes in Computer Science 13654, Springer, Cham, 2022.
+            </li>
+          </ol>
+        </div>
 
         <div id="poster">
           <h2>Poster</h2>
@@ -258,14 +252,3 @@
         e.preventDefault();
 
         links.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-
-        sections.forEach(section => section.classList.remove('active'));
-        const sectionId = link.getAttribute('data-section');
-        document.getElementById(sectionId).classList.add('active');
-      });
-    });
-  </script>
-</body>
-</html>
-
