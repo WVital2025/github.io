@@ -69,4 +69,160 @@
       display: block;
       transition: transform 0.3s ease;
     }
-    .photo:hov
+    .photo:hover img {
+      transform: scale(1.05);
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .links a {
+      text-decoration: none;
+      color: var(--primary-color);
+      font-weight: 500;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      padding: 8px 12px;
+      border-radius: 10px;
+      user-select: none;
+      display: inline-block;
+    }
+
+    .links a:hover,
+    .links a.active {
+      background: var(--hover-bg-gradient);
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 242, 254, 0.6);
+    }
+
+    .right-column {
+      flex: 2 1 600px;
+      padding: 20px;
+    }
+
+    .name {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: var(--primary-color);
+      text-shadow: 0 1px 3px rgba(3,102,214,0.4);
+    }
+
+    .content {
+      margin-top: 20px;
+      padding: 20px;
+      background: var(--bg-light);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+    }
+
+    .content h2 {
+      color: var(--primary-color);
+      border-bottom: 2px solid var(--hover-color);
+      padding-bottom: 6px;
+      margin-bottom: 15px;
+    }
+
+    .content > div {
+      display: none;
+    }
+
+    .content > div.active {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .left-column {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        max-width: 100%;
+        align-items: center;
+        background: none;
+      }
+
+      .right-column {
+        padding-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left-column">
+      <div class="photo">
+        <img src="wvital (3).jpeg" alt="Wington de Lima Vital" />
+      </div>
+      <nav class="links" id="menuLinks">
+        <a href="#" class="active" data-section="home">Home</a>
+        <a href="#" data-section="journal">Journal Publications</a>
+        <a href="#" data-section="conference">Conference Papers</a>
+        <a href="#" data-section="talks">Talks & Other Works</a>
+        <a href="#" data-section="research">Research Projects</a>
+        <a href="#" data-section="teaching">Teaching</a>
+        <a href="#" data-section="sourcecodes">Source Codes</a>
+      </nav>
+    </div>
+    <div class="right-column">
+      <h1 class="name">Wington de Lima Vital</h1>
+      <div class="content">
+        <div id="home" class="active">
+          <h2>Home</h2>
+          <p>Bem-vindo à minha página pessoal!</p>
+        </div>
+        <div id="journal">
+          <h2>Journal Publications</h2>
+          <p>Aqui estarão minhas publicações em periódicos.</p>
+        </div>
+        <div id="conference">
+          <h2>Conference Papers</h2>
+          <p>Aqui estarão meus trabalhos apresentados em conferências.</p>
+        </div>
+        <div id="talks">
+          <h2>Talks & Other Works</h2>
+          <p>Minhas palestras e outros trabalhos.</p>
+        </div>
+        <div id="research">
+          <h2>Research Projects</h2>
+          <p>Projetos de pesquisa em andamento ou concluídos.</p>
+        </div>
+        <div id="teaching">
+          <h2>Teaching</h2>
+          <p>Matérias que ensino e materiais didáticos.</p>
+        </div>
+        <div id="sourcecodes">
+          <h2>Source Codes</h2>
+          <p>Códigos fonte de projetos e exemplos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const links = document.querySelectorAll('#menuLinks a');
+    const sections = document.querySelectorAll('.content > div');
+
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+
+        sections.forEach(section => section.classList.remove('active'));
+        const sectionId = link.getAttribute('data-section');
+        document.getElementById(sectionId).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
