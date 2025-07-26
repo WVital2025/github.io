@@ -33,12 +33,14 @@
       width: 120px;
     }
 
-    .photo img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 12px;
-    }
+  .photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 50%; /* torna a imagem circular */
+  object-fit: cover;  /* corta a imagem para caber bem */
+  aspect-ratio: 1;    /* mantém proporção 1:1 (quadrado) */
+}
 
     .links {
       display: flex;
@@ -163,3 +165,5 @@
   </script>
 </body>
 </html>
+
+
