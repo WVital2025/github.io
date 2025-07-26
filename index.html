@@ -71,7 +71,6 @@
       margin: 0 0 10px 0;
     }
 
-    /* Conteúdo das seções */
     .content {
       padding: 20px;
       background: #fff;
@@ -84,12 +83,10 @@
       border-radius: 8px;
     }
 
-    /* Esconder todas as seções inicialmente */
     .content > div {
       display: none;
     }
 
-    /* Exibir seção ativa */
     .content > div.active {
       display: block;
     }
@@ -99,7 +96,7 @@
   <div class="header">
     <div class="left-column">
       <div class="photo">
-        <img src="wvital.jpeg" alt="Minha foto" />
+        <img src="wvital (3).jpeg" alt="Minha foto" />
       </div>
       <nav class="links" id="menuLinks">
         <a href="#" class="active" data-section="home">Home</a>
@@ -155,14 +152,10 @@
       link.addEventListener('click', e => {
         e.preventDefault();
 
-        // Remove active dos links
         links.forEach(l => l.classList.remove('active'));
-        // Ativa o link clicado
         link.classList.add('active');
 
-        // Esconder todas as seções
         sections.forEach(section => section.classList.remove('active'));
-        // Mostrar a seção relacionada ao link clicado
         const sectionId = link.getAttribute('data-section');
         document.getElementById(sectionId).classList.add('active');
       });
