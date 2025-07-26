@@ -1,119 +1,40 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Wington de Lima Vital</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(180deg, #f0f4ff 0%, #ffffff 100%);
-      color: #333;
-    }
+<style>
+  /* ... demais estilos iguais ... */
 
-    .header {
-      display: flex;
-      align-items: center;
-      padding: 40px 20px;
-      background: linear-gradient(to right, #4e54c8, #8f94fb);
-      color: white;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
+  .left-column {
+    flex: 1 1 220px;
+    max-width: 260px;
+    background: linear-gradient(135deg, #1e2a38 0%, #283845 100%);
+    color: #d1d9e6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    box-shadow: inset -3px 0 8px rgba(255 255 255 / 0.05);
+  }
 
-    .photo {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      overflow: hidden;
-      margin-right: 30px;
-      border: 4px solid white;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-      flex-shrink: 0;
-    }
+  .photo {
+    border: 4px solid rgba(209, 217, 230, 0.8);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    /* restante igual */
+  }
 
-    .photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 50% 30%;
-    }
+  .links a {
+    color: #d1d9e6;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 17px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    user-select: none;
+  }
 
-    .header h1 {
-      font-size: 32px;
-      margin: 0;
-    }
-
-    .content {
-      padding: 30px 20px;
-    }
-
-    .section {
-      margin-bottom: 30px;
-    }
-
-    .section h2 {
-      color: #4e54c8;
-      font-size: 24px;
-      margin-bottom: 10px;
-      border-bottom: 2px solid #8f94fb;
-      padding-bottom: 5px;
-      display: inline-block;
-    }
-
-    .section ul {
-      list-style-type: disc;
-      padding-left: 20px;
-    }
-
-    a {
-      color: #4e54c8;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    a:hover {
-      color: #8f94fb;
-      text-decoration: underline;
-    }
-  </style>
-</head>
-<body>
-  <div class="header">
-    <div class="photo">
-      <img src="wvital (3).jpeg" alt="Foto de Wington de Lima Vital">
-    </div>
-    <h1>Wington de Lima Vital</h1>
-  </div>
-
-  <div class="content">
-    <div class="section">
-      <h2>Artigos de Conferência</h2>
-      <ul>
-        <li><a href="#">Título do Artigo 1</a></li>
-        <li><a href="#">Título do Artigo 2</a></li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>Capítulos de Livro</h2>
-      <ul>
-        <li><a href="#">Título do Capítulo 1</a></li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>Ensino</h2>
-      <ul>
-        <li><a href="#">Cálculo 1</a></li>
-        <li><a href="#">Álgebra Linear</a></li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>Hobbies</h2>
-      <p>Astrofísica, escrita, violão e programação criativa.</p>
-    </div>
-  </div>
-</body>
-</html>
+  .links a:hover,
+  .links a.active {
+    background: #a0c4ff;
+    color: #1e2a38;
+    font-weight: 700;
+    cursor: pointer;
+  }
+</style>
