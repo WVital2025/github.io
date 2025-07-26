@@ -252,3 +252,13 @@
         e.preventDefault();
 
         links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+
+        sections.forEach(section => section.classList.remove('active'));
+        const sectionId = link.getAttribute('data-section');
+        document.getElementById(sectionId).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
