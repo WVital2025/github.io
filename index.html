@@ -1,40 +1,199 @@
-<style>
-  /* ... demais estilos iguais ... */
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wington de Lima Vital</title>
+  <style>
+    :root {
+      --primary-color: #0366d6;
+      --hover-color: #004999;
+      --bg-light: #f9f9f9;
+      --bg-dark: #ffffff;
+      --text-color: #333;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      --border-radius: 12px;
+    }
 
-  .left-column {
-    flex: 1 1 220px;
-    max-width: 260px;
-    background: linear-gradient(135deg, #1e2a38 0%, #283845 100%);
-    color: #d1d9e6;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 20px;
-    box-shadow: inset -3px 0 8px rgba(255 255 255 / 0.05);
-  }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-light);
+      color: var(--text-color);
+    }
 
-  .photo {
-    border: 4px solid rgba(209, 217, 230, 0.8);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    /* restante igual */
-  }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+      background: var(--bg-dark);
+      box-shadow: var(--shadow);
+      border-radius: var(--border-radius);
+    }
 
-  .links a {
-    color: #d1d9e6;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 17px;
-    padding: 10px 15px;
-    border-radius: 8px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    user-select: none;
-  }
+    .left-column {
+      flex: 1 1 200px;
+      max-width: 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      border-right: 1px solid #ddd;
+    }
 
-  .links a:hover,
-  .links a.active {
-    background: #a0c4ff;
-    color: #1e2a38;
-    font-weight: 700;
-    cursor: pointer;
-  }
-</style>
+    .photo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .links a {
+      text-decoration: none;
+      color: var(--primary-color);
+      font-weight: 500;
+      font-size: 16px;
+      transition: all 0.2s ease;
+    }
+
+    .links a:hover,
+    .links a.active {
+      color: var(--hover-color);
+      font-weight: 700;
+    }
+
+    .right-column {
+      flex: 2 1 600px;
+      padding: 20px;
+    }
+
+    .name {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .content {
+      margin-top: 20px;
+      padding: 20px;
+      background: var(--bg-light);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+    }
+
+    .content > div {
+      display: none;
+    }
+
+    .content > div.active {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .left-column {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        max-width: 100%;
+        align-items: center;
+      }
+
+      .right-column {
+        padding-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left-column">
+      <div class="photo">
+        <img src="wvital (3).jpeg" alt="Wington de Lima Vital" />
+      </div>
+      <nav class="links" id="menuLinks">
+        <a href="#" class="active" data-section="home">Home</a>
+        <a href="#" data-section="journal">Journal Publications</a>
+        <a href="#" data-section="conference">Conference Papers</a>
+        <a href="#" data-section="talks">Talks & Other Works</a>
+        <a href="#" data-section="research">Research Projects</a>
+        <a href="#" data-section="teaching">Teaching</a>
+        <a href="#" data-section="sourcecodes">Source Codes</a>
+      </nav>
+    </div>
+    <div class="right-column">
+      <h1 class="name">Wington de Lima Vital</h1>
+      <div class="content">
+        <div id="home" class="active">
+          <h2>Home</h2>
+          <p>Bem-vindo à minha página pessoal!</p>
+        </div>
+        <div id="journal">
+          <h2>Journal Publications</h2>
+          <p>Aqui estarão minhas publicações em periódicos.</p>
+        </div>
+        <div id="conference">
+          <h2>Conference Papers</h2>
+          <p>Aqui estarão meus trabalhos apresentados em conferências.</p>
+        </div>
+        <div id="talks">
+          <h2>Talks & Other Works</h2>
+          <p>Minhas palestras e outros trabalhos.</p>
+        </div>
+        <div id="research">
+          <h2>Research Projects</h2>
+          <p>Projetos de pesquisa em andamento ou concluídos.</p>
+        </div>
+        <div id="teaching">
+          <h2>Teaching</h2>
+          <p>Matérias que ensino e materiais didáticos.</p>
+        </div>
+        <div id="sourcecodes">
+          <h2>Source Codes</h2>
+          <p>Códigos fonte de projetos e exemplos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const links = document.querySelectorAll('#menuLinks a');
+    const sections = document.querySelectorAll('.content > div');
+
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+
+        sections.forEach(section => section.classList.remove('active'));
+        const sectionId = link.getAttribute('data-section');
+        document.getElementById(sectionId).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
